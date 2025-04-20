@@ -10,7 +10,7 @@ body {
 	font-weight: 400;
 	background: #fff;
 	background-color: #fff;
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 }
 
 .container {
