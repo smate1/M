@@ -1647,9 +1647,9 @@ body {
 }
 @media (max-width: 900px) {
 	.quality {
-		padding: 50px 0 80px;
+		padding: 50px 0 60px;
 		position: relative;
-		margin-bottom: 40px;
+		margin-bottom: 80px;
 	}
 	.news {
 		padding: 38px 0 38px;
