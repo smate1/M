@@ -191,22 +191,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	const qualityTrack = document.querySelector('.quality__items')
 	const qualityItems = document.querySelectorAll('.quality__item')
 	const qualityDotsContainer = document.querySelector('.quality-slider-dots')
-	const qualityPrev = document.getElementById('quality-prev') // Updated ID selector
-	const qualityNext = document.getElementById('quality-next') // Updated ID selector
+	const qualityPrev = document.getElementById('quality-prev')
+	const qualityNext = document.getElementById('quality-next')
 
-	const visibleCount = 4 // Показываем 4 фото одновременно
-	const totalSlides = qualityItems.length
-	const maxDots = Math.min(4, Math.ceil(totalSlides / visibleCount))
+	let visibleCount = getVisibleCount()
 	let currentSlide = 0
 
-	// Создаем точки навигации динамически
+	function getVisibleCount() {
+		const width = window.innerWidth
+		if (width <= 450) return 2
+		if (width <= 650) return 3
+		return 4
+	}
+
+	function getMaxDots() {
+		return Math.min(Math.ceil(qualityItems.length / visibleCount), 4)
+	}
+
 	function createDots() {
-		// Очищаем существующие точки
 		const existingDots = qualityDotsContainer.querySelectorAll('.quality-dot')
 		existingDots.forEach(dot => dot.remove())
 
-		// Создаем только 4 точки
-		for (let i = 0; i < 4; i++) {
+		const maxDots = getMaxDots()
+
+		for (let i = 0; i < maxDots; i++) {
 			const dot = document.createElement('span')
 			dot.classList.add('quality-dot')
 			dot.dataset.index = i
@@ -215,136 +223,117 @@ document.addEventListener('DOMContentLoaded', () => {
 				dot.classList.add('quality-active')
 			}
 
-			// Вставляем точку перед кнопкой "next"
 			qualityDotsContainer.insertBefore(dot, qualityNext)
 		}
 	}
 
 	function showQualitySlide(index) {
-		// Проверяем границы
+		const maxIndex = getMaxDots() - 1
+
 		if (index < 0) index = 0
-		if (index > 3) index = 3 // Максимум 4 точки (0-3)
+		if (index > maxIndex) index = maxIndex
 
 		currentSlide = index
+		const percent = (100 / visibleCount) * currentSlide
+		qualityTrack.style.transform = `translateX(-${percent}%)`
 
-		// Анимация слайдера - показываем нужный слайд, но всегда отображаем 4 слайда
-		qualityTrack.style.transform = `translateX(-${index * 25}%)`
-
-		// Обновляем активную точку
 		const dots = qualityDotsContainer.querySelectorAll('.quality-dot')
 		dots.forEach((dot, i) => {
-			// Точка активна, если ее индекс соответствует текущему слайду
 			dot.classList.toggle('quality-active', i === currentSlide)
 		})
 
-		// Обновляем активные элементы - активен только первый видимый слайд
 		qualityItems.forEach((item, i) => {
 			item.classList.toggle('active', i === index)
 		})
 	}
 
-	// Инициализируем точки и показываем первый слайд
+	function updateSlider() {
+		visibleCount = getVisibleCount()
+		createDots()
+		showQualitySlide(currentSlide)
+	}
+
 	createDots()
 	showQualitySlide(0)
 
-	// Обработчики событий
 	qualityNext.addEventListener('click', () => {
-		// Ограничиваем максимальный индекс до 3 для 4 точек
-		const newIndex = currentSlide < 3 ? currentSlide + 1 : 0
+		const maxIndex = getMaxDots() - 1
+		const newIndex = currentSlide < maxIndex ? currentSlide + 1 : 0
 		showQualitySlide(newIndex)
 	})
 
 	qualityPrev.addEventListener('click', () => {
-		// Ограничиваем минимальный индекс до 0, максимальный до 3
-		const newIndex = currentSlide > 0 ? currentSlide - 1 : 3
+		const maxIndex = getMaxDots() - 1
+		const newIndex = currentSlide > 0 ? currentSlide - 1 : maxIndex
 		showQualitySlide(newIndex)
 	})
 
 	qualityDotsContainer.addEventListener('click', e => {
 		if (e.target.classList.contains('quality-dot')) {
 			const index = Number(e.target.dataset.index)
-			// Перемещаем слайдер до позиции, соответствующей индексу точки
-			// Для фиксированных 4 точек индексы 0-3
 			showQualitySlide(index)
 		}
 	})
 
-	// Поддержка свайпов на мобильных устройствах
 	let startX = 0
 	let endX = 0
 	let isSwiping = false
 
-	qualityTrack.addEventListener(
-		'touchstart',
-		e => {
-			startX = e.touches[0].clientX
-			isSwiping = true
-			qualityTrack.classList.add('swiping') // Добавляем класс при начале свайпа
-		},
-		{ passive: true }
-	) // passive: true для улучшения производительности
+	qualityTrack.addEventListener('touchstart', e => {
+		startX = e.touches[0].clientX
+		isSwiping = true
+		qualityTrack.classList.add('swiping')
+	}, { passive: true })
 
-	qualityTrack.addEventListener(
-		'touchmove',
-		e => {
-			if (!isSwiping) return
+	qualityTrack.addEventListener('touchmove', e => {
+		if (!isSwiping) return
+		const currentX = e.touches[0].clientX
+		const diff = currentX - startX
 
-			const currentX = e.touches[0].clientX
-			const initialX = startX
-			const diff = currentX - initialX
+		if (Math.abs(diff) > 10) {
+			e.preventDefault()
+		}
 
-			// Если это горизонтальный свайп, предотвращаем скролл страницы
-			if (Math.abs(diff) > 10) {
-				// небольшой threshold для определения горизонтального жеста
-				e.preventDefault()
-			}
+		const currentOffset = (100 / visibleCount) * currentSlide
+		let newOffset = currentOffset - (diff * 0.5) / (qualityTrack.offsetWidth / 100)
+		const maxOffset = 100 - (100 / visibleCount)
 
-			// Применяем трансформацию "на лету" для эффекта следования за пальцем
-			// Ограничиваем сдвиг, чтобы не выходить за пределы слайдера
-			const currentOffset = currentSlide * 25
-			let newOffset =
-				currentOffset - (diff * 0.5) / (qualityTrack.offsetWidth / 100)
+		if (newOffset < 0) newOffset = 0
+		if (newOffset > maxOffset) newOffset = maxOffset
 
-			// Ограничиваем смещение
-			if (newOffset < 0) newOffset = 0
-			if (newOffset > 75) newOffset = 75 // Максимум 75% (для 4 слайдов)
-
-			qualityTrack.style.transform = `translateX(-${newOffset}%)`
-		},
-		{ passive: false }
-	) // passive: false для возможности вызова preventDefault
+		qualityTrack.style.transform = `translateX(-${newOffset}%)`
+	}, { passive: false })
 
 	qualityTrack.addEventListener('touchend', e => {
 		if (!isSwiping) return
-
 		isSwiping = false
-		qualityTrack.classList.remove('swiping') // Удаляем класс при окончании свайпа
+		qualityTrack.classList.remove('swiping')
+
 		endX = e.changedTouches[0].clientX
 		const delta = endX - startX
 
-		// Определяем направление свайпа и перемещаем слайдер
 		if (Math.abs(delta) > 50) {
-			// Минимальное расстояние для свайпа
 			if (delta > 0 && currentSlide > 0) {
-				// Свайп вправо
 				showQualitySlide(currentSlide - 1)
-			} else if (delta < 0 && currentSlide < 3) {
-				// Свайп влево
+			} else if (delta < 0 && currentSlide < getMaxDots() - 1) {
 				showQualitySlide(currentSlide + 1)
 			} else {
-				// Вернуть на текущий слайд, если свайп вне пределов
 				showQualitySlide(currentSlide)
 			}
 		} else {
-			// Если слайд не изменился, возвращаем на место
 			showQualitySlide(currentSlide)
 		}
 	})
 
-	// Отменяем свайп при уходе с элемента
 	qualityTrack.addEventListener('touchcancel', () => {
 		isSwiping = false
-		qualityTrack.classList.remove('swiping') // Удаляем класс при отмене свайпа
+		qualityTrack.classList.remove('swiping')
 		showQualitySlide(currentSlide)
 	})
+
+	// Перезапуск слайдера при ресайзе окна
+	window.addEventListener('resize', () => {
+		updateSlider()
+	})
 })
+
