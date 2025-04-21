@@ -204,17 +204,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		return 4
 	}
 
-	function getMaxDots() {
-		return Math.min(Math.ceil(qualityItems.length / visibleCount), 4)
-	}
-
+	// Завжди створюємо 4 точки
 	function createDots() {
 		const existingDots = qualityDotsContainer.querySelectorAll('.quality-dot')
 		existingDots.forEach(dot => dot.remove())
 
-		const maxDots = getMaxDots()
-
-		for (let i = 0; i < maxDots; i++) {
+		for (let i = 0; i < 4; i++) {
 			const dot = document.createElement('span')
 			dot.classList.add('quality-dot')
 			dot.dataset.index = i
@@ -228,12 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function showQualitySlide(index) {
-		const maxIndex = getMaxDots() - 1
-
+		const maxIndex = 3 // бо 4 точки
 		if (index < 0) index = 0
 		if (index > maxIndex) index = maxIndex
 
 		currentSlide = index
+
 		const percent = (100 / visibleCount) * currentSlide
 		qualityTrack.style.transform = `translateX(-${percent}%)`
 
@@ -249,7 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function updateSlider() {
 		visibleCount = getVisibleCount()
-		createDots()
 		showQualitySlide(currentSlide)
 	}
 
@@ -257,14 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	showQualitySlide(0)
 
 	qualityNext.addEventListener('click', () => {
-		const maxIndex = getMaxDots() - 1
-		const newIndex = currentSlide < maxIndex ? currentSlide + 1 : 0
+		const newIndex = currentSlide < 3 ? currentSlide + 1 : 0
 		showQualitySlide(newIndex)
 	})
 
 	qualityPrev.addEventListener('click', () => {
-		const maxIndex = getMaxDots() - 1
-		const newIndex = currentSlide > 0 ? currentSlide - 1 : maxIndex
+		const newIndex = currentSlide > 0 ? currentSlide - 1 : 3
 		showQualitySlide(newIndex)
 	})
 
@@ -279,30 +271,39 @@ document.addEventListener('DOMContentLoaded', () => {
 	let endX = 0
 	let isSwiping = false
 
-	qualityTrack.addEventListener('touchstart', e => {
-		startX = e.touches[0].clientX
-		isSwiping = true
-		qualityTrack.classList.add('swiping')
-	}, { passive: true })
+	qualityTrack.addEventListener(
+		'touchstart',
+		e => {
+			startX = e.touches[0].clientX
+			isSwiping = true
+			qualityTrack.classList.add('swiping')
+		},
+		{ passive: true }
+	)
 
-	qualityTrack.addEventListener('touchmove', e => {
-		if (!isSwiping) return
-		const currentX = e.touches[0].clientX
-		const diff = currentX - startX
+	qualityTrack.addEventListener(
+		'touchmove',
+		e => {
+			if (!isSwiping) return
+			const currentX = e.touches[0].clientX
+			const diff = currentX - startX
 
-		if (Math.abs(diff) > 10) {
-			e.preventDefault()
-		}
+			if (Math.abs(diff) > 10) {
+				e.preventDefault()
+			}
 
-		const currentOffset = (100 / visibleCount) * currentSlide
-		let newOffset = currentOffset - (diff * 0.5) / (qualityTrack.offsetWidth / 100)
-		const maxOffset = 100 - (100 / visibleCount)
+			const currentOffset = (100 / visibleCount) * currentSlide
+			let newOffset =
+				currentOffset - (diff * 0.5) / (qualityTrack.offsetWidth / 100)
+			const maxOffset = (100 / visibleCount) * 3
 
-		if (newOffset < 0) newOffset = 0
-		if (newOffset > maxOffset) newOffset = maxOffset
+			if (newOffset < 0) newOffset = 0
+			if (newOffset > maxOffset) newOffset = maxOffset
 
-		qualityTrack.style.transform = `translateX(-${newOffset}%)`
-	}, { passive: false })
+			qualityTrack.style.transform = `translateX(-${newOffset}%)`
+		},
+		{ passive: false }
+	)
 
 	qualityTrack.addEventListener('touchend', e => {
 		if (!isSwiping) return
@@ -315,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		if (Math.abs(delta) > 50) {
 			if (delta > 0 && currentSlide > 0) {
 				showQualitySlide(currentSlide - 1)
-			} else if (delta < 0 && currentSlide < getMaxDots() - 1) {
+			} else if (delta < 0 && currentSlide < 3) {
 				showQualitySlide(currentSlide + 1)
 			} else {
 				showQualitySlide(currentSlide)
@@ -331,9 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		showQualitySlide(currentSlide)
 	})
 
-	// Перезапуск слайдера при ресайзе окна
-	window.addEventListener('resize', () => {
-		updateSlider()
-	})
+	window.addEventListener('resize', updateSlider)
 })
 
