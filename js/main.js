@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
 	const burger = document.getElementById('burger')
-	const header = document.querySelector('.header')
+	const header = document.getElementById('header') // змінено з querySelector('.header')
 	const closeBtn = document.getElementById('burger-menu')
 	const menuLinks = document.querySelectorAll('.mobile__menu a')
 	const body = document.body
@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 })
+
 
 // QUALITY SLIDER
 document.addEventListener('DOMContentLoaded', () => {

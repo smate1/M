@@ -1503,18 +1503,18 @@ body {
 	transform-origin: center;
 }
 
-.header.open .burger span:first-child {
+#header.open .burger span:first-child {
 	transform: rotate(45deg) translate(6px, 7px);
 }
 
-.header.open .burger span:nth-child(2) {
+#header.open .burger span:nth-child(2) {
 	opacity: 0;
 }
 
-.header.open .burger span:last-child {
+#header.open .burger span:last-child {
 	transform: rotate(-45deg) translate(5px, -6px);
 }
-.header.open .mobile-arrow {
+#header.open .mobile-arrow {
 	display: block;
 	transition: all 0.3s;
 }
@@ -1552,10 +1552,10 @@ color: #0e212a;
 	display: none;
 }
 
-.header.open .burger {
+#header.open .burger {
 	transition: all 0.3s;
 }
-.header.open .mobile__menu {
+#header.open .mobile__menu {
 	transform: translateX(0);
 }
 .header__lang-mobile {
