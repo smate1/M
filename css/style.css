@@ -1671,6 +1671,9 @@ body {
 	.contacts__input {
 		width: 360px;
 	}
+	.footer{
+		overflow: hidden;
+	}
 	.footer::after {
 		background-size: auto;
 		bottom: -150px;
