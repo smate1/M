@@ -1554,7 +1554,7 @@ body {
 	align-items: center;
 	cursor: pointer;
 	z-index: 1200;
-	-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent; 
 	-webkit-user-select: none; 
 	transition: all 0.3s ease-in-out;
 }
@@ -1591,6 +1591,15 @@ body {
 
 #header.open .burger span:last-child {
 	transform: rotate(-45deg) translate(5px, -6px);
+}
+@supports (-webkit-touch-callout: none) {
+	/* iOS only hack */
+	#header.open .burger span:first-child {
+		transform: rotate(45deg) translate(4.5px, 4.5px);
+	}
+	#header.open .burger span:last-child {
+		transform: rotate(-45deg) translate(4.5px, -4.5px);
+	}
 }
 
 #header.open .mobile-arrow {
