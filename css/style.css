@@ -1671,9 +1671,7 @@ body {
 	.contacts__input {
 		width: 360px;
 	}
-	.footer{
-		overflow: hidden;
-	}
+	
 	.footer::after {
 		background-size: auto;
 		bottom: -150px;
@@ -1764,7 +1762,7 @@ body {
 		justify-content: start;
 	}
 	.contacts__subtitle {
-		width: 300px;
+		min-width: 300px;
 	}
 	.contacts__top {
 		display: block;
@@ -1777,7 +1775,7 @@ body {
 	.contacts__descr,
 	.contacts__link {
 		text-align: left;
-		width: 350px;
+		min-width: 350px;
 	}
 	.footer__subtitle {
 		width: auto;
@@ -1912,7 +1910,7 @@ body {
 
 @media (max-width: 700px) {
 	.contacts__subtitle {
-		width: 200px;
+		min-width: 200px;
 		font-size: 14px;
 	}
 	.contacts__descr,
@@ -2121,7 +2119,7 @@ body {
 		width: 250px;
 	}
 	.contacts__subtitle {
-		width: 160px;
+		min-width: 160px;
 		line-height: 150%; /* 24px */
 	}
 	.footer__descr,
@@ -2197,7 +2195,7 @@ body {
 		gap: 10px;
 	}
 	.contacts__subtitle {
-		width: 140px;
+		min-width: 140px;
 	}
 	.footer__subtitle {
 		width: auto;
