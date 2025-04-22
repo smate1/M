@@ -1671,7 +1671,7 @@ body {
 	.contacts__input {
 		width: 360px;
 	}
-	
+
 	.footer::after {
 		background-size: auto;
 		bottom: -150px;
@@ -1819,6 +1819,18 @@ body {
 	.news__item-text {
 		font-size: 16px;
 	}
+	.post__text,
+	.post__item-text,
+	.post__link {
+		font-size: 14px;
+	}
+	.post__date {
+		font-size: 16px;
+	}
+	.post__news {
+		font-size: 15px;
+		padding: 4px 24px;
+	}
 	.news__item-wrapper {
 		padding-bottom: 60px;
 	}
@@ -1904,8 +1916,14 @@ body {
 	}
 }
 @media (max-width: 750px) {
+	.post__img {
+		width: 100%;
+	}
+	.post {
+		padding: 0 0 80px;
+	}
 	.article {
-		padding: 20px 0 65px;
+		padding: 0 0 65px;
 	}
 	.article__item-date {
 		font-size: 12px;
@@ -1941,6 +1959,28 @@ body {
 	}
 }
 @media (max-width: 650px) {
+	.post__reference-title{
+		margin-bottom: 10px;
+	}
+	.post__item-decor {
+		margin-bottom: 15px;
+	}
+	.post__item-content {
+		display: block;
+	}
+	.post__img {
+		padding: 15px 0 20px;
+	}
+	.post__items {
+		gap: 30px;
+		margin-bottom: 30px;
+	}
+	.post__item-title {
+		margin-bottom: 12px;
+	}
+	.post__texts > .post__text + .post__text {
+		margin-top: 15px;
+	}
 	.step__text {
 		font-size: 12px;
 	}
@@ -2202,6 +2242,24 @@ body {
 }
 
 @media (max-width: 450px) {
+	.post__item-title{
+		font-size: 14px;
+		letter-spacing: normal;
+	}
+	.post__text,
+	.post__item-text,
+	.post__link {
+		font-size: 12px;
+	}
+	.post__item-title {
+		font-size: 18px;
+	}
+	.post__news {
+		line-height: 25px;
+	}
+	.post__date {
+		font-size: 14px;
+	}
 	.steps__item-inner {
 		padding: 25px 0;
 	}

@@ -26,7 +26,37 @@
 
 <body>
 
-  <header class="header__news">
+  <header class="header__news" id="header">
+    <ul class="mobile__menu mobile__menu-news">
+      <li class="menu__item menu__item-mobile">
+        <a class="menu__item-link menu__item-link--news" href="./about.html">
+          О нас
+        </a>
+      </li>
+      <li class="menu__item menu__item-mobile">
+        <a class="menu__item-link menu__item-link--news" href="./index.html#products">
+          Продукция
+        </a>
+      </li>
+      <li class="menu__item menu__item-mobile">
+        <a class="menu__item-link menu__item-link--news" href="./index.html#quality">
+          Сертификаты
+        </a>
+      </li>
+      <li class="menu__item menu__item-mobile">
+        <a class="menu__item-link menu__item-link--news" href="./index.html#partners">
+          Партнеры
+        </a>
+      </li>
+      <li class="menu__item menu__item-mobile">
+        <a class="menu__item-link menu__item-link--news" href="#contacts">
+          Контакты
+        </a>
+      </li>
+      <a class="header__call-btn header__call-btn--news header__call-btn--mobile" href="#">
+        Обратный звонок
+      </a>
+    </ul>
     <div class="container">
       <div class="header__top header__top-news">
         <a class="header__logo" href="./index.html">
@@ -65,6 +95,16 @@
         <a class="header__lang header__lang-dark" href="#">
           EN
         </a>
+        <div class="mobile-right">
+          <a class="header__lang header__lang-news header__lang-mobile" href="#">
+            EN
+          </a>
+          <button class="burger burger-news" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -297,7 +337,7 @@
               </a>
             </li>
             <li class="menu__item">
-              <a class="menu__item-link" href="./index.html#partners">
+              <a class="menu__item-link" href="./index.html">
                 Партнеры
               </a>
             </li>
@@ -307,10 +347,37 @@
               </a>
             </li>
           </ul>
-          <a class="header__call-btn" href="#">
+          <a class="header__call-btn--footer" href="#">
             Обратный звонок
           </a>
         </div>
+        <ul class="fade-in footer-mobile">
+          <li class="menu__item">
+            <a class="menu__item-link" href="./about.html">
+              О нас
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="./index.html#products">
+              Продукция
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="./index.html#quality">
+              Сертификаты
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="./index.html#partners">
+              Партнеры
+            </a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__item-link" href="#contacts">
+              Контакты
+            </a>
+          </li>
+        </ul>
         <div class="footer__content">
           <div class="footer__left contacts__left">
             <div class="footer__info contacts__info">
