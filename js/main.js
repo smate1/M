@@ -5,6 +5,49 @@ document.addEventListener('DOMContentLoaded', () => {
 	const prevBtn = document.getElementById('prev')
 	const nextBtn = document.getElementById('next')
 	const headerSlider = document.querySelector('.header__slider')
+	const backgroundsDesktop = [
+		'./images/header-bg-1.png',
+		'./images/header-bg-2.png',
+		'./images/header-bg-3.jpg',
+		'./images/header-bg-4.jpg',
+	]
+
+	const backgroundsMobile = [
+		'./images/header-bg-mobile.png',
+		'./images/header-bg-2.png',
+		'./images/header-bg-3.jpg',
+		'./images/header-bg-4.jpg',
+	]
+
+	function isMobile() {
+		return window.innerWidth <= 650
+	}
+
+	function updateBackground(index) {
+		const bgImage = isMobile()
+			? backgroundsMobile[index]
+			: backgroundsDesktop[index]
+		nextBg.style.backgroundImage = `url('${bgImage}')`
+		nextBg.classList.add('active')
+		currentBg.classList.remove('active')
+
+		// Перемикання
+		const temp = currentBg
+		currentBg = nextBg
+		nextBg = temp
+	}
+
+
+	const bg1 = document.getElementById('bg1')
+	const bg2 = document.getElementById('bg2')
+
+	let currentBgIndex = 0
+	let currentBg = bg1
+	let nextBg = bg2
+
+
+
+
 	let currentIndex = 0
 	let isSwiping = false
 
@@ -13,8 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			slide.classList.toggle('active', i === index)
 			dots[i].classList.toggle('active', i === index)
 		})
+		updateBackground(index)
 		currentIndex = index
 	}
+
+
 
 	showSlide(currentIndex)
 
