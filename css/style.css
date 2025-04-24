@@ -1630,6 +1630,39 @@ body {
 	transition: all 0.3s ease-in-out;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal-close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
 .no-scroll {
 	overflow: hidden;
 }

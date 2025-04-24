@@ -239,6 +239,30 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 })
+document.addEventListener('DOMContentLoaded', () => {
+	const modal = document.getElementById('image-modal')
+	const modalImg = document.getElementById('modal-img')
+	const modalClose = document.getElementById('modal-close')
+
+	document.querySelectorAll('.quality__item-img').forEach(img => {
+		img.addEventListener('click', () => {
+			modal.style.display = 'flex'
+			modalImg.src = img.dataset.full || img.src
+		})
+	})
+
+	modalClose.addEventListener('click', () => {
+		modal.style.display = 'none'
+		modalImg.src = ''
+	})
+
+	modal.addEventListener('click', e => {
+		if (e.target === modal) {
+			modal.style.display = 'none'
+			modalImg.src = ''
+		}
+	})
+})
 
 
 // QUALITY SLIDER
