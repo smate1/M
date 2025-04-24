@@ -1615,10 +1615,10 @@ body {
 @supports (-webkit-touch-callout: none) {
 	/* iOS only hack */
 	#header.open .burger span:first-child {
-		transform: rotate(45deg) translate(1.5px, 4.5px);
+		transform: rotate(45deg) translate(5.5px, 4.5px);
 	}
 	#header.open .burger span:last-child {
-		transform: rotate(-45deg) translate(1.5px, -4.5px);
+		transform: rotate(-45deg) translate(5.5px, -4.5px);
 	}
 }
 
