@@ -1618,7 +1618,7 @@ body {
 		width: 45px;
 	}
 	#header.open .burger span:first-child {
-		transform: rotate(45deg) translate(7.5px, 4.5px);
+		transform: rotate(45deg) translate(7.5px, 5px);
 	}
 	#header.open .burger span:last-child {
 		transform: rotate(-45deg) translate(7.5px, -4.5px);
