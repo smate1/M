@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const backgroundsMobile = [
 		'./images/header-bg-mobile.png',
-		'./images/header-bg-mobile-2.png',
+		'./images/header-bg-2.png',
 		'./images/header-bg-3.jpg',
 		'./images/header-bg-4.jpg',
 	]
