@@ -2060,6 +2060,9 @@ body {
 	background-size: cover;
 }
 @media (max-width: 650px) {
+	.header-bg {
+		max-height: 460px;
+	}
 	.post__reference-title {
 		margin-bottom: 10px;
 	}

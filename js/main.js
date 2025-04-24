@@ -27,15 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
 		const bgImage = isMobile()
 			? backgroundsMobile[index]
 			: backgroundsDesktop[index]
+
 		nextBg.style.backgroundImage = `url('${bgImage}')`
+
+		// Розміри фону в залежності від типу пристрою
+		nextBg.style.backgroundSize = isMobile() ? '100% 400px' : 'cover'
+		nextBg.style.backgroundRepeat = 'no-repeat'
+		nextBg.style.backgroundPosition = 'top center'
+
 		nextBg.classList.add('active')
 		currentBg.classList.remove('active')
 
-		// Перемикання
+		// Перемикання блоків
 		const temp = currentBg
 		currentBg = nextBg
 		nextBg = temp
 	}
+
 
 
 	const bg1 = document.getElementById('bg1')
