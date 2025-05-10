@@ -1248,6 +1248,7 @@ body {
 }
 
 .steps {
+	overflow-x: hidden;
 }
 .steps__items {
 	display: flex;
