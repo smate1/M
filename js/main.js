@@ -185,31 +185,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	animatedElems.forEach(elem => observer.observe(elem))
 })
-document.addEventListener('DOMContentLoaded', () => {
-	const processItems = document.querySelectorAll('.process__item')
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const processItems = document.querySelectorAll('.process__item')
 
-	const observer = new IntersectionObserver(
-		(entries, obs) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					processItems.forEach((item, index) => {
-						setTimeout(() => {
-							item.classList.add('visible')
-						}, index * 200) // затримка 200мс між кожним
-					})
-					obs.disconnect() // тільки один раз
-				}
-			})
-		},
-		{
-			threshold: 0.3,
-		}
-	)
+// 	const observer = new IntersectionObserver(
+// 		(entries, obs) => {
+// 			entries.forEach(entry => {
+// 				if (entry.isIntersecting) {
+// 					processItems.forEach((item, index) => {
+// 						setTimeout(() => {
+// 							item.classList.add('visible')
+// 						}, index * 400) // затримка 200мс між кожним
+// 					})
+// 					obs.disconnect() // тільки один раз
+// 				}
+// 			})
+// 		},
+// 		{
+// 			threshold: 0.3,
+// 		}
+// 	)
 
-	if (processItems.length) {
-		observer.observe(processItems[0])
-	}
-})
+// 	if (processItems.length) {
+// 		observer.observe(processItems[0])
+// 	}
+// })
 
 document.addEventListener('DOMContentLoaded', function () {
 	const burger = document.getElementById('burger')

@@ -16,16 +16,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-  <header class="header" id="header">
-    <div class="header-bg" id="bg1"></div>
-    <div class="header-bg" id="bg2"></div>
+  <header class="contacts__header header__about" id="header">
     <ul class="mobile__menu">
       <li class="menu__item menu__item-mobile">
         <a class="menu__item-link" href="./about.html">
@@ -33,7 +29,7 @@
         </a>
       </li>
       <li class="menu__item menu__item-mobile">
-        <a class="menu__item-link" href="#products">
+        <a class="menu__item-link" href="./index.html#products">
           Продукция
         </a>
       </li>
@@ -43,7 +39,7 @@
         </a>
       </li>
       <li class="menu__item menu__item-mobile">
-        <a class="menu__item-link" href="#partners">
+        <a class="menu__item-link" href="./index.html#partners">
           Партнеры
         </a>
       </li>
@@ -58,17 +54,17 @@
     </ul>
     <div class="container">
       <div class="header__top">
-        <a class="header__logo fade-in" href="./index.html">
+        <a class="header__logo" href="./index.html">
           <img src="./images/logo.svg" alt="">
         </a>
-        <ul class="menu fade-in">
+        <ul class="menu">
           <li class="menu__item">
             <a class="menu__item-link" href="./about.html">
               О нас
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__item-link" href="#products">
+            <a class="menu__item-link" href="./index.html">
               Продукция
             </a>
           </li>
@@ -78,7 +74,7 @@
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__item-link" href="#partners">
+            <a class="menu__item-link" href="./index.html#partners">
               Партнеры
             </a>
           </li>
@@ -88,10 +84,10 @@
             </a>
           </li>
         </ul>
-        <a class="header__call-btn fade-in" href="#">
+        <a class="header__call-btn" href="#">
           Обратный звонок
         </a>
-        <a class="header__lang fade-in" href="#">
+        <a class="header__lang" href="#">
           EN
         </a>
         <div class="mobile-right">
@@ -105,155 +101,15 @@
           </button>
         </div>
       </div>
-      <div class="header__slider fade-in-slider">
-        <div class="header__item active slide-in-right">
-          <h1 class="header__title">МЕСТОРОЖДЕНИЕ <br> БАРИТА В КАЗАХСТАНЕ</h1>
-          <p class="header__text header__text-mobile">От месторождения до производства – мы доставляем качественно и во
-            время</p>
-          <button class="header__btn">Сделать заказ</button>
-          <p class="slider__mobile-text">
-            От месторождения до производства – мы доставляем качественно и во время
-          </p>
-        </div>
-
-        <div class="header__item">
-          <h1 class="header__title">СТРАТЕГИЧЕСКИЙ <br> РЕСУРС</h1>
-          <p class="header__text header__text-mobile">Мы обеспечим стабильные поставки барита для буровых, химических и
-            строительных нужд
-          </p>
-          <button class="header__btn">Узнать больше</button>
-          <p class="slider__mobile-text">
-            Мы обеспечим стабильные поставки барита для буровых, химических и строительных нужд
-          </p>
-        </div>
-
-        <div class="header__item">
-          <h1 class="header__title">ГАРАНТИЯ <br> КАЧЕСТВА И СРОКОВ</h1>
-          <p class="header__text header__text-mobile">Наша команда контролирует каждый этап — от добычи до отгрузки</p>
-          <button class="header__btn">Связаться с нами</button>
-          <p class="slider__mobile-text">Наша команда контролирует каждый этап — от добычи до отгрузки
-          </p>
-        </div>
-
-        <div class="header__item">
-          <h1 class="header__title">МЕЖДУНАРОДНЫЕ <br> СТАНДАРТЫ</h1>
-          <p class="header__text header__text-mobile">Продукция соответствует требованиям API и экспортируется по всему
-            миру</p>
-          <button class="header__btn">Сертификаты</button>
-          <p class="slider__mobile-text">
-            Продукция соответствует требованиям API и экспортируется по всему миру
-          </p>
-        </div>
-
-      </div>
-      <div class="slider-controls">
-        <div class="slider-dots">
-          <button class="arrow-prev" id="prev"><img src="./images/arrow-prev.svg" alt=""></button>
-          <span class="dot active" data-index="0"></span>
-          <span class="dot" data-index="1"></span>
-          <span class="dot" data-index="2"></span>
-          <span class="dot" data-index="3"></span>
-          <button class="arrow-next" id="next"><img src="./images/arrow-next.svg" alt=""></button>
-        </div>
+      <div class="header__about-content">
+        <h2 class="header__contacts-title header__about-title">
+          КОНТАКТЫ
+        </h2>
       </div>
     </div>
   </header>
-
-  <section class="why">
+  <section class="contacts__delivery delivery">
     <div class="container">
-      <h2 class="why__title title scroll-animate-up">
-        почему выбирают нас
-      </h2>
-      <div class="why__inner">
-        <div class="why__content scroll-animate-left">
-          <p class="why__text">
-            ТОО «Mining Technology» - компания, специализирующаяся на производстве и поставках баритового концентрата
-            более 15 лет.
-            Основное производство расположено в городе Каражал, где осуществляется обогащение баритовой руды с
-            использованием
-            современного оборудования.
-          </p>
-          <div class="why__video scroll-animate-right why__video-mobile">
-            <img class="why__preview" src="./images/why-preview.png" alt="">
-            <button class="why__play" aria-label="Play video">
-              <svg xmlns="http://www.w3.org/2000/svg" width="71" height="71" viewBox="0 0 71 71" fill="none">
-                <circle cx="35.5" cy="35.5" r="35.5" fill="#CE940C" />
-                <path d="M56.5103 35.8622L23.1837 55.0612L23.1837 16.6633L56.5103 35.8622Z" fill="white" />
-              </svg>
-            </button>
-          </div>
-          <div class="why__items">
-            <div class="why__item">
-              <img class="why__item-img" src="./images/why-1.svg" alt="">
-              <p class="why__item-text">
-                100% соответствие стандартам (ГОСТ, API, ISO)
-              </p>
-            </div>
-            <div class="why__item">
-              <img class="why__item-img" src="./images/why-2.svg" alt="">
-              <p class="why__item-text">
-                Стабильные объемы
-                и гибкие условия оплаты
-              </p>
-            </div>
-            <div class="why__item">
-              <img class="why__item-img" src="./images/why-3.svg" alt="">
-              <p class="why__item-text">
-                Прямые поставки с месторождения
-              </p>
-            </div>
-            <div class="why__item">
-              <img class="why__item-img" src="./images/why-4.svg" alt="">
-              <p class="why__item-text">
-                Собственная логистика – доставка по всему миру
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="why__video scroll-animate-right">
-          <img class="why__preview" src="./images/why-preview.png" alt="">
-          <button class="why__play" aria-label="Play video">
-            <svg xmlns="http://www.w3.org/2000/svg" width="71" height="71" viewBox="0 0 71 71" fill="none">
-              <circle cx="35.5" cy="35.5" r="35.5" fill="#CE940C" />
-              <path d="M56.5103 35.8622L23.1837 55.0612L23.1837 16.6633L56.5103 35.8622Z" fill="white" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="products" id="products">
-    <div class="container">
-      <h2 class="products__title title scroll-animate-up">
-        Продукция и сферы <br> применения
-      </h2>
-      <p class="products__text scroll-animate-left">
-        Барит (BaSO4) — это природный минерал, состоящий из сульфата бария. Он широко распространен в осадочных и
-        гидротермальных породах и отличается высокой плотностью, химической инертностью и устойчивостью к агрессивным
-        средам.
-      </p>
-      <p class="products__text products__text-bottom scroll-animate-left">
-        Благодаря своей высокой плотности, химической инертности и доступности, барит является незаменимым
-        компонентом в
-        бурении нефтяных и газовых скважин. Его использование позволяет значительно повысить безопасность и
-        эффективность
-        буровых работ, снижая риск выбросов и разрушения стенок скважины.
-      </p>
-      <div class="products__buttons scroll-animate-left">
-        <button class="products__btn">
-          Подробнее о продукции
-        </button>
-        <button class="products__btn">
-          Сделать заказ
-        </button>
-      </div>
-    </div>
-  </section>
-  <section class="delivery">
-    <div class="container">
-      <h2 class="delivery__title title scroll-animate-up">
-        логистика и доставка
-      </h2>
       <p class="delivery__text scroll-animate-left">
         Типы транспортировки: ж/д, автоперевозки, мультимодальные перевозки.
       </p>
@@ -263,187 +119,48 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-  <section class="process">
+  <div class="employees">
     <div class="container">
-      <h2 class="process__title title scroll-animate-up">
-        технологический процесс
-      </h2>
-      <div class="process__items">
-        <div class="process__item" data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">
-          <div class="process__item-title">
-            Этап 1: Рудоподготовка и усреднение
-          </div>
-          <div class="process__item-text">
-            Дробление, промывка, классификация
-          </div>
-        </div>
-        <div class="process__item" data-aos="fade-right" data-aos-delay="400" data-aos-duration="800">
-          <div class="process__item-title">
-            Этап 1: Рудоподготовка и усреднение
-          </div>
-          <div class="process__item-text">
-            Дробление, промывка, классификация
-          </div>
-        </div>
-        <div class="process__item" data-aos="fade-right" data-aos-delay="800" data-aos-duration="800">
-          <div class="process__item-title">
-            Этап 1: Рудоподготовка и усреднение
-          </div>
-          <div class="process__item-text">
-            Дробление, промывка, классификация
-          </div>
-        </div>
-      </div>
-      <button class="process__btn">
-        Подробнее
-      </button>
-    </div>
-  </section>
-  <section class="partners" id="partners">
-    <div class="container">
-      <h2 class="partners__title title scroll-animate-up">
-        клиенты и ПАРТНЕРЫ
-      </h2>
-      <div class="partners__top scroll-animate-left">
-        <img class="partners__top-img" src="./images/partners-1.png" alt="">
-        <img class="partners__top-img" src="./images/partners-2.png" alt="">
-        <img class="partners__top-img" src="./images/partners-3.png" alt="">
-        <img class="partners__top-img" src="./images/partners-4.png" alt="">
-      </div>
-      <div class="partners__bottom scroll-animate-right">
-        <img class="partners__bottom-img" src="./images/partners-5.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-6.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-7.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-8.png" alt="">
-      </div>
-      <div class="partners__mobile scroll-animate-left">
-        <img class="partners__top-img" src="./images/partners-mobile-1.png" alt="">
-        <img class="partners__top-img" src="./images/partners-mobile-2.png" alt="">
-        <img class="partners__top-img" src="./images/partners-mobile-3.png" alt="">
-        <img class="partners__top-img" src="./images/partners-mobile-4.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-mobile-5.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-mobile-6.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-mobile-7.png" alt="">
-        <img class="partners__bottom-img" src="./images/partners-mobile-8.png" alt="">
-      </div>
-    </div>
-  </section>
-  <section class="news">
-    <div class="container">
-      <h2 class="news__title title scroll-animate-up">
-        новости и статьи
-      </h2>
-      <div class="news__inner">
-        <div class="news__left">
-          <div class="news__info">
-            <div class="news__info-text">
-              Связаться с пресс-службой:
+      <div class="employees__items">
+        <div class="employees__item scroll-animate-left">
+          <img class="employees__item-photo" src="./images/employee-1.png" alt="">
+          <div class="employees__item-content">
+            <p class="employees__item-name">
+              Темирлан Дабиев
+            </p>
+            <div class="employees__item-description">
+              Директор
             </div>
-            <a class="news__info-phone" href="tel:77771001008">+7 777 100 1008</a>
-          </div>
-          <div class="news__btn scroll-animate-left">
-            <a href="./news.html">
-              Смотреть Все
+            <a class="employees__item-link" href="tel:77082421458">
+              <span class="phone-number">+7 708 242 1458</span>
+            </a>
+            <a class="employees__item-link" href="mailto:a.abilkhas@aifc.kz">
+              <span class="phone-number">a.abilkhas@aifc.kz</span>
             </a>
           </div>
         </div>
-        <div class="news__items map-animate">
-          <a href="./post.html" class="news__item news__item-main">
-            <div class="news__item-mark">
-              Новости
+        <div class="employees__item scroll-animate-right">
+          <img class="employees__item-photo" src="./images/employee-1.png" alt="">
+          <div class="employees__item-content">
+            <p class="employees__item-name">
+              Адиль Вилор
+            </p>
+            <div class="employees__item-description">
+              Менеджер по продажам
             </div>
-            <div class="news__item-wrapper">
-              <div class="news__item-date">
-                30 янв 2025
-              </div>
-              <div class="news__item-text news__item-text--main">
-                Стартует конкурс социально значимых
-                проектов «Территория АЛРОСА»
-              </div>
-            </div>
-          </a>
-          <a href="./news.html" class="news__item news__item-desktop">
-            <div class="news__item-wrapper news__item-wrapper--casual">
-              <div class="news__item-text">
-                Медиагалерея
-              </div>
-              <img class="news__item-arrow" src="./images/news-arrow.svg" alt="">
-            </div>
-          </a>
-          <a href="./news.html" class="news__item news__item-desktop">
-            <div class="news__item-wrapper news__item-wrapper--casual">
-              <div class="news__item-text news__item-text--black">
-                Архив
-              </div>
-              <img class="news__item-arrow" src="./images/news-arrow-black.svg" alt="">
-            </div>
-          </a>
-        </div>
-        <a href="./news.html" class="news__item-mobile news__item-mobile--gallery">
-          <div class="news__item-wrapper--mobile">
-            <div class="news__item-text--mobile">
-              Медиагалерея
-            </div>
-            <img class="news__item-arrow" src="./images/news-arrow-black.svg" alt="">
+            <a class="employees__item-link" href="tel:77082421458">
+              <span class="phone-number">+7 708 242 1458</span>
+            </a>
+            <a class="employees__item-link" href="mailto:a.abilkhas@aifc.kz">
+              <span class="phone-number">a.abilkhas@aifc.kz</span>
+            </a>
           </div>
-        </a>
-        <a href="./news.html" class="news__item-mobile">
-          <div class="news__item-wrapper--mobile">
-            <div class="news__item-text--mobile">
-              Архив
-            </div>
-            <img class="news__item-arrow" src="./images/news-arrow-black.svg" alt="">
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  <section class="quality" id="quality">
-    <div class="container">
-      <h2 class="quality__title title scroll-animate-up">
-        Качество и сертификация
-      </h2>
-      <div class="quality__wrapper map-animate">
-        <div class="quality__items">
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-1.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-2.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-3.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-4.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-1.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-2.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-3.png" alt="">
-          </div>
-          <div class="quality__item">
-            <img class="quality__item-img" src="./images/quality-4.png" alt="">
-          </div>
-        </div>
-      </div>
-      <div class="quality-slider-controls">
-        <div class="quality-slider-dots">
-          <button class="quality-arrow-prev" id="quality-prev"><img src="./images/arrow-prev-gal.svg" alt=""></button>
-          <button class="quality-arrow-next" id="quality-next"><img src="./images/arrow-next-gal.svg" alt=""></button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
   <section class="contacts" id="contacts">
     <div class="container">
-      <h2 class="contacts__title title scroll-animate-up">
-        контакты
-      </h2>
       <div class="contacts__top">
         <div class="contacts__inner">
           <div class="contacts__left scroll-animate-left">
@@ -677,12 +394,6 @@
 
 
 
-  <div class="modal" id="image-modal">
-    <div class="modal-content">
-      <span class="modal-close" id="modal-close">&times;</span>
-      <img src="" alt="Велике зображення" id="modal-img">
-    </div>
-  </div>
 
 
 
@@ -691,12 +402,20 @@
 
 
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      once: false, // Анимация срабатывает каждый раз при прокрутке
-    });
-  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/slick.min.js"></script>

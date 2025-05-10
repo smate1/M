@@ -16,6 +16,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -45,7 +46,7 @@
         </a>
       </li>
       <li class="menu__item menu__item-mobile">
-        <a class="menu__item-link" href="#contacts">
+        <a class="menu__item-link" href="./contacts.html">
           Контакты
         </a>
       </li>
@@ -80,7 +81,7 @@
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__item-link" href="#contacts">
+            <a class="menu__item-link" href="./contacts.html">
               Контакты
             </a>
           </li>
@@ -182,7 +183,7 @@
   </section>
   <section class="steps">
     <div class="steps__items">
-      <div class="steps__item scroll-animate-left">
+      <div class="steps__item" data-aos="fade-right" data-aos-delay="0" data-aos-duration="800">
         <div class="container">
           <div class="steps__item-inner">
             <img class="steps__img" src="./images/step-1.svg" alt="">
@@ -196,7 +197,7 @@
           </div>
         </div>
       </div>
-      <div class="steps__item scroll-animate-right">
+      <div class="steps__item" data-aos="fade-left" data-aos-delay="250" data-aos-duration="800">
         <div class="container">
           <div class="steps__item-inner">
             <p class="step__text">
@@ -212,7 +213,7 @@
           </div>
         </div>
       </div>
-      <div class="steps__item scroll-animate-left">
+      <div class="steps__item" data-aos="fade-right" data-aos-delay="500" data-aos-duration="800">
         <div class="container">
           <div class="steps__item-inner">
             <p class="step__text">
@@ -227,7 +228,7 @@
           </div>
         </div>
       </div>
-      <div class="steps__item scroll-animate-right">
+      <div class="steps__item" data-aos="fade-left" data-aos-delay="750" data-aos-duration="800">
         <div class="container">
           <div class="steps__item-inner">
             <p class="step__text">
@@ -417,7 +418,7 @@
             </a>
           </li>
           <li class="menu__item">
-            <a class="menu__item-link" href="#contacts">
+            <a class="menu__item-link" href="./contacts.html">
               Контакты
             </a>
           </li>
@@ -448,7 +449,7 @@
           </a>
         </li>
         <li class="menu__item">
-          <a class="menu__item-link" href="#contacts">
+          <a class="menu__item-link" href="./contacts.html">
             Контакты
           </a>
         </li>
@@ -562,9 +563,14 @@
 
 
 
-</body>
 
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: false, // Анимация срабатывает каждый раз при прокрутке
+  });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/jquery.fancybox.min.js"></script>
 <script src="js/slick.min.js"></script>
