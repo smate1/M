@@ -211,6 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // 	}
 // })
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
 	const burger = document.getElementById('burger')
 	const header = document.getElementById('header') // змінено з querySelector('.header')
@@ -414,3 +416,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('resize', updateSlider)
 })
 
+document.addEventListener('DOMContentLoaded', function () {
+	// Додаємо обробник до всіх елементів з класом "call-back"
+	document.querySelectorAll('.call-back').forEach(function (btn) {
+		btn.addEventListener('click', function () {
+			document.getElementById('popup').style.display = 'flex'
+		})
+	})
+
+	// Закриття по кнопці "×"
+	document.querySelector('.close-btn').addEventListener('click', function () {
+		document.getElementById('popup').style.display = 'none'
+	})
+
+	// Закриття по кліку на фон (поза формою)
+	document.getElementById('popup').addEventListener('click', function (e) {
+		if (e.target === this) {
+			this.style.display = 'none'
+		}
+	})
+})

@@ -53,9 +53,9 @@
           Контакты
         </a>
       </li>
-      <a class="header__call-btn header__call-btn--news header__call-btn--mobile" href="#">
+      <button class="call-back header__call-btn header__call-btn--news header__call-btn--mobile" href="#">
         Обратный звонок
-      </a>
+      </button>
     </ul>
     <div class="container">
       <div class="header__top header__top-news">
@@ -89,9 +89,9 @@
             </a>
           </li>
         </ul>
-        <a class="header__call-btn header__call-btn--dark" href="#">
+        <button class="call-back header__call-btn header__call-btn--dark" href="#">
           Обратный звонок
-        </a>
+        </button>
         <a class="header__lang header__lang-dark" href="#">
           EN
         </a>
@@ -170,9 +170,9 @@
                 </a>
               </li>
             </ul>
-            <a class="header__call-btn--footer" href="#">
+            <button class="call-back header__call-btn--footer" href="#">
               Обратный звонок
-            </a>
+            </button>
           </div>
           <ul class="fade-in footer-mobile">
             <li class="menu__item">
@@ -266,7 +266,20 @@
     
     
     
-    
+    <div id="popup" class="popup-overlay">
+      <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">
+          <img src="./images/close.svg" alt="">
+        </button>
+        <h2>Оставьте заявку и мы<br>Вам перезвоним</h2>
+        <form>
+          <input type="text" placeholder="Имя" required />
+          <input type="tel" placeholder="Телефон" required />
+          <input type="email" placeholder="E-mail" required />
+          <button type="submit" class="submit-btn">СДЕЛАТЬ ЗАКАЗ</button>
+        </form>
+      </div>
+      </div>
     
     
     

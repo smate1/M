@@ -1834,6 +1834,90 @@ body {
 	margin-bottom: 35px;
 }
 
+/* Стилі поп-апа */
+.popup-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+}
+
+.popup-content {
+	background: #fff;
+	padding: 50px 52px 65px;
+	border-radius: 16px;
+	text-align: center;
+	max-width: 400px;
+	width: 90%;
+	position: relative;
+}
+
+.popup-content h2 {
+	color: #0e212a;
+	text-align: center;
+	font-family: Arial;
+	font-size: 24px;
+	font-weight: 700;
+	line-height: 150%; /* 36px */
+	margin-bottom: 30px;
+}
+
+.popup-content input {
+	width: 100%;
+	margin-bottom: 9px;
+	padding: 11px 19px;
+	border-radius: 15px;
+	border: 1px solid #bdbdbd;
+	color: #000;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 150%; /* 24px */
+	letter-spacing: -0.32px;
+}
+
+.submit-btn {
+	background: white;
+	color: black;
+	padding: 14px 27px;
+	color: #0e212a;
+	text-align: center;
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 100%; /* 16px */
+	letter-spacing: -0.32px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top: 30px;
+	border-radius: 30px;
+	border: 2px solid #0e212a;
+	transition: all 0.3s;
+}
+
+.submit-btn:hover {
+	color: #fff;
+	background: #0e212a;
+}
+
+.close-btn {
+	position: absolute;
+	top: 14px;
+	right: 22px;
+	border: none;
+	border-radius: 50%;
+	font-size: 20px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
 @media (max-width: 1599px) {
 	.steps__item:nth-child(2) {
 		background-size: auto;
@@ -1841,7 +1925,7 @@ body {
 }
 
 @media (max-width: 1100px) {
-	.employees__items{
+	.employees__items {
 		gap: 25px;
 	}
 	.article__items {
@@ -1901,11 +1985,11 @@ body {
 	display: none;
 }
 @media (max-width: 1000px) {
-	.employees__items{
+	.employees__items {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	.employees__item{
+	.employees__item {
 		width: 481px;
 	}
 	.menu-mobile {
@@ -2174,7 +2258,7 @@ body {
 @media (max-width: 650px) {
 	.contacts__delivery {
 		padding-bottom: 40px !important;
-}
+	}
 	.header-bg {
 		max-height: 460px;
 	}
@@ -2423,7 +2507,7 @@ body {
 }
 
 @media (max-width: 550px) {
-	.employees__item{
+	.employees__item {
 		gap: 10px;
 	}
 	.article__items {
@@ -2468,19 +2552,33 @@ body {
 }
 
 @media (max-width: 450px) {
-	.employees__items{
-		gap: 40px;
-	}
-	.contacts{
-		padding-top: 70px;
-	}
-	.employees__item-photo{
-		width: 100%;
-	}
-	.employees__item-description{
+	.popup-content h2 {
+		font-size: 18px;
 		margin-bottom: 20px;
 	}
-	.employees__item{
+	.popup-content{
+		padding: 35px 30px 40px;
+	}
+	.close-btn{
+		right: 15px;
+	}
+	.close-btn img{
+		width: 25px;
+		height: 25px;
+	}
+	.employees__items {
+		gap: 40px;
+	}
+	.contacts {
+		padding-top: 70px;
+	}
+	.employees__item-photo {
+		width: 100%;
+	}
+	.employees__item-description {
+		margin-bottom: 20px;
+	}
+	.employees__item {
 		display: block;
 		max-width: 230px;
 		margin: 0 auto;
@@ -2616,8 +2714,18 @@ body {
 		letter-spacing: 1.08px;
 		margin-bottom: 22px;
 	}
-
-	.header__btn {
+	.submit-btn {
+		color: #05161f !important;
+		margin-top: 20px;
+	}
+	.submit-btn:hover{
+		color: #fff !important;
+	}
+	.popup-content input{
+		font-size: 14px;
+	}
+	.header__btn,
+	.submit-btn {
 		color: #fff;
 		text-align: center;
 		font-family: Inter;

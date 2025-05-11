@@ -52,9 +52,9 @@
           Контакты
         </a>
       </li>
-      <a class="header__call-btn header__call-btn--mobile" href="#">
+      <button class="header__call-btn header__call-btn--mobile call-back" href="#">
         Обратный звонок
-      </a>
+      </button>
     </ul>
     <div class="container">
       <div class="header__top">
@@ -88,9 +88,9 @@
             </a>
           </li>
         </ul>
-        <a class="header__call-btn fade-in" href="#">
+        <button class="call-back header__call-btn fade-in" href="#">
           Обратный звонок
-        </a>
+        </button>
         <a class="header__lang fade-in" href="#">
           EN
         </a>
@@ -110,7 +110,7 @@
           <h1 class="header__title">МЕСТОРОЖДЕНИЕ <br> БАРИТА В КАЗАХСТАНЕ</h1>
           <p class="header__text header__text-mobile">От месторождения до производства – мы доставляем качественно и во
             время</p>
-          <button class="header__btn">Сделать заказ</button>
+          <button class="header__btn call-back">Сделать заказ</button>
           <p class="slider__mobile-text">
             От месторождения до производства – мы доставляем качественно и во время
           </p>
@@ -243,7 +243,7 @@
         <button class="products__btn">
           Подробнее о продукции
         </button>
-        <button class="products__btn">
+        <button class="call-back products__btn">
           Сделать заказ
         </button>
       </div>
@@ -538,7 +538,7 @@
         </div>
       </form>
       <div class="contacts__btn-wrapper">
-        <button class="contacts__btn">
+        <button class="contacts__btn call-back">
           Сделать заказ
         </button>
       </div>
@@ -578,9 +578,9 @@
               </a>
             </li>
           </ul>
-          <a class="header__call-btn--footer fade-in" href="#">
+          <button class="call-back header__call-btn--footer fade-in" href="#">
             Обратный звонок
-          </a>
+          </button>
         </div>
         <ul class="fade-in footer-mobile">
           <li class="menu__item">
@@ -686,7 +686,20 @@
 
 
 
-
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <button class="close-btn" onclick="closePopup()">
+        <img src="./images/close.svg" alt="">
+      </button>
+      <h2>Оставьте заявку и мы<br>Вам перезвоним</h2>
+      <form>
+        <input type="text" placeholder="Имя" required />
+        <input type="tel" placeholder="Телефон" required />
+        <input type="email" placeholder="E-mail" required />
+        <button type="submit" class="submit-btn">СДЕЛАТЬ ЗАКАЗ</button>
+      </form>
+    </div>
+    </div>
 
 
 
