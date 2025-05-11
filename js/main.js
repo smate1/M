@@ -28,21 +28,28 @@ document.addEventListener('DOMContentLoaded', () => {
 			? backgroundsMobile[index]
 			: backgroundsDesktop[index]
 
-		nextBg.style.backgroundImage = `url('${bgImage}')`
+		// Створюємо об'єкт зображення для попереднього завантаження
+		const img = new Image()
+		img.src = bgImage
 
-		// Розміри фону в залежності від типу пристрою
-		nextBg.style.backgroundSize = isMobile() ? '100% 400px' : 'cover'
-		nextBg.style.backgroundRepeat = 'no-repeat'
-		nextBg.style.backgroundPosition = 'top center'
+		img.onload = () => {
+			nextBg.style.backgroundImage = `url('${bgImage}')`
 
-		nextBg.classList.add('active')
-		currentBg.classList.remove('active')
+			// Додаткові стилі
+			nextBg.style.backgroundSize = isMobile() ? '100% 400px' : 'cover'
+			nextBg.style.backgroundRepeat = 'no-repeat'
+			nextBg.style.backgroundPosition = 'top center'
 
-		// Перемикання блоків
-		const temp = currentBg
-		currentBg = nextBg
-		nextBg = temp
+			nextBg.classList.add('active')
+			currentBg.classList.remove('active')
+
+			// Перемикання
+			const temp = currentBg
+			currentBg = nextBg
+			nextBg = temp
+		}
 	}
+	
 
 
 
