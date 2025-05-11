@@ -2641,7 +2641,7 @@ body {
 	.header__about-title,
 	.article__title,
 	.title {
-		font-size: 18px;
+		/* font-size: 18px; */
 		letter-spacing: 1.5px;
 		margin-bottom: 23px;
 	}
