@@ -1856,6 +1856,7 @@ body {
 	max-width: 400px;
 	width: 90%;
 	position: relative;
+	min-width: 432px;
 }
 
 .popup-content h2 {
@@ -2558,6 +2559,7 @@ body {
 	}
 	.popup-content{
 		padding: 35px 30px 40px;
+		min-width: auto;
 	}
 	.close-btn{
 		right: 15px;
@@ -2722,7 +2724,7 @@ body {
 		color: #fff !important;
 	}
 	.popup-content input{
-		font-size: 14px;
+		font-size: 12px;
 	}
 	.header__btn,
 	.submit-btn {
