@@ -1919,6 +1919,60 @@ body {
 	cursor: pointer;
 }
 
+.liquids {
+	padding-bottom: 70px;
+}
+.liquids__title {
+	margin-bottom: 36px;
+}
+
+.liquids__items {
+	display: flex;
+	justify-content: space-between;
+	gap: 80px;
+}
+.liquids__item {
+}
+.liquids__subtitle {
+	color: #000;
+	font-family: Arial;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 150%; /* 33px */
+	letter-spacing: 1.32px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.liquids__text {
+	color: #000;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; /* 24px */
+	letter-spacing: 0.96px;
+	margin-bottom: 28px;
+}
+.liquids__weight {
+	padding: 15px 20px;
+	background-image: url('../images/liquid-bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top center;
+	display: inline-block;
+
+}
+.liquids__weight-text {
+	color: #000;
+	font-family: Arial;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 150%; /* 24px */
+	letter-spacing: 0.96px;
+}
+
 @media (max-width: 1599px) {
 	.steps__item:nth-child(2) {
 		background-size: auto;
@@ -1926,6 +1980,9 @@ body {
 }
 
 @media (max-width: 1100px) {
+	.liquids__items{
+		gap: 10px;
+	}
 	.employees__items {
 		gap: 25px;
 	}
@@ -1986,9 +2043,21 @@ body {
 	display: none;
 }
 @media (max-width: 1000px) {
+	.liquids__items{
+		flex-direction: column;
+	}
+	.liquids__item img{
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+	}
 	.employees__items {
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	.liquids__weight{
+		text-align: center;
+		display: block;
 	}
 	.employees__item {
 		width: 481px;
@@ -2199,6 +2268,23 @@ body {
 	}
 }
 @media (max-width: 750px) {
+	.liquids__subtitle{
+		font-size: 18px;
+		margin: 10px 0;
+	}
+	.liquids__text{
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	.liquids__weight{
+		padding: 10px 15px;
+	}
+	.liquids{
+		padding-bottom: 0;
+	}
+	.liquids__weight-text{
+		font-size: 14px;
+	}
 	.error__num {
 		font-size: 90px;
 	}
@@ -2508,6 +2594,13 @@ body {
 }
 
 @media (max-width: 550px) {
+	.liquids__item img{
+		width: 100%;
+	}
+	.liquids__text{
+		margin-bottom: 10px;
+		font-size: 12px;
+	}
 	.employees__item {
 		gap: 10px;
 	}
@@ -2557,14 +2650,14 @@ body {
 		font-size: 18px;
 		margin-bottom: 20px;
 	}
-	.popup-content{
+	.popup-content {
 		padding: 35px 30px 40px;
 		min-width: auto;
 	}
-	.close-btn{
+	.close-btn {
 		right: 15px;
 	}
-	.close-btn img{
+	.close-btn img {
 		width: 25px;
 		height: 25px;
 	}
@@ -2645,6 +2738,7 @@ body {
 		letter-spacing: 1.5px;
 		margin-bottom: 23px;
 	}
+
 	.products {
 		background-image: url('../images/products-bg-mobile.png');
 		background-size: cover;
@@ -2720,10 +2814,10 @@ body {
 		color: #05161f !important;
 		margin-top: 20px;
 	}
-	.submit-btn:hover{
+	.submit-btn:hover {
 		color: #fff !important;
 	}
-	.popup-content input{
+	.popup-content input {
 		font-size: 12px;
 	}
 	.header__btn,
