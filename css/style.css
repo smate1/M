@@ -1935,6 +1935,7 @@ body {
 .liquids__item img{
 	width: 470px;
 	height: 315px;
+	object-fit: cover;
 }
 .liquids__subtitle {
 	color: #000;
