@@ -464,6 +464,7 @@ body {
 
 .delivery__text {
 	margin-bottom: 24px;
+	line-height: 150%;
 }
 .map-wrapper {
   width: 100%;
